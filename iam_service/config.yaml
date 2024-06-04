@@ -1,0 +1,21 @@
+SERVER:
+  GRPC:
+    PORT: 9443
+  HTTP:
+    PORT: 8080
+
+LOG:
+  LEVEL: DEBUG
+  MODE: development
+
+MIGRATION_FOLDER: file://sql/migrations
+POSTGRESQL:
+  HOST: localhost
+  PORT: 5432
+  USERNAME: wms_web
+  PASSWORD: secret
+  DATABASE: iam_db
+  OPTIONS: ?sslmode=disable
+
+PRODUCER_CONFIG:
+  AUDIT_LOG_DISABLED: true

@@ -1,0 +1,16 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library")
+
+go_library(
+    name = "go_default_library",
+    srcs = [
+        "pubsub.go",
+        "pubsub_gen.go",
+    ],
+    importpath = "go.tekoapis.com/tekone/app/warehouse/iam_service/internal/pubsub",
+    visibility = ["//app/warehouse/iam_service:__subpackages__"],
+    deps = [
+        "//app/warehouse/iam_service/config:go_default_library",
+        "@com_github_go_logr_logr//:go_default_library",
+        "@com_github_urfave_cli_v2//:go_default_library",
+    ],
+)

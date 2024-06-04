@@ -1,0 +1,17 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Launch Server",
+            "type": "go",
+            "request": "launch",
+            "mode": "auto",
+            "program": "${workspaceFolder}/cmd",
+            "args": ["server"],  // Add the "server" argument here
+            "env": {},  // You can set environment variables here
+            "buildFlags": "",
+            "trace": "verbose",  // Optional: Useful for debugging the debugger itself
+            "showLog": true  // Optional: Show logs from the debugger
+        }
+    ]
+}

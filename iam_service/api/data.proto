@@ -1,0 +1,10 @@
+syntax = "proto3";
+package tekone.app.warehouse.iam_service.api;
+option go_package = "go.tekoapis.com/tekone/app/warehouse/iam_service/api";
+//-------------------------end generated header---------------------------//
+
+// Demo
+message Demo {
+    // name
+    string name = 1 [ json_name = "name" ];
+}

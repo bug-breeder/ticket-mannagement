@@ -1,0 +1,12 @@
+syntax = "proto3";
+package tekone.app.warehouse.tm_service.api;
+option go_package = "go.tekoapis.com/tekone/app/warehouse/tm_service/api";
+//-------------------------end generated header---------------------------//
+
+// Ping
+message Ping {
+    // id
+    int64 id = 1;
+    // message
+    string message = 2;
+}

@@ -1,0 +1,24 @@
+SERVER:
+  GRPC:
+    PORT: 9445
+  HTTP:
+    PORT: 8082
+
+LOG:
+  LEVEL: DEBUG
+  MODE: development
+
+MIGRATION_FOLDER: file://sql/migrations
+POSTGRESQL:
+  HOST: localhost
+  PORT: 5432
+  USERNAME: wms_web
+  PASSWORD: secret
+  DATABASE: bff_db
+  OPTIONS: ?sslmode=disable
+
+PRODUCER_CONFIG:
+  AUDIT_LOG_DISABLED: true
+
+IAM_HOST: localhost:9443
+TM_HOST: localhost:9444

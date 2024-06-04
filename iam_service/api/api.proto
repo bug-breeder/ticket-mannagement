@@ -1,0 +1,68 @@
+syntax = "proto3";
+package tekone.app.warehouse.iam_service.api;
+option go_package = "go.tekoapis.com/tekone/app/warehouse/iam_service/api";
+import "validate/validate.proto";
+import "google/api/annotations.proto";
+import "tekone/app/warehouse/iam_service/api/data.proto";
+//-------------------------end generated header---------------------------//
+
+// IamService
+service IamService {
+  rpc CreateUser(CreateUserRequest) returns (CreateUserResponse) {
+    option (google.api.http) = {
+      get : "/api/v1/iam/create-user"
+    };
+  }
+  rpc GetToken(GetTokenRequest) returns (GetTokenResponse) {
+    option (google.api.http) = {
+      get : "/api/v1/iam/get-token"
+    };
+  }
+  rpc GetUserInfo(GetUserInfoRequest) returns (GetUserInfoResponse) {
+    option (google.api.http) = {
+      get : "/api/v1/iam/get-user-info"
+    };
+  }
+}
+
+message User {
+  string user_id = 1;
+  string full_name = 2;
+  string username = 3;
+  string gender = 4;
+  string birth_date = 5;
+  string password = 6;
+  string role = 7;
+}
+
+message CreateUserRequest {
+  string full_name = 1;
+  string username = 2;
+  string gender = 3;
+  string birth_date = 4;
+  string password = 5;
+  string role = 6;
+}
+
+message CreateUserResponse {
+  string message = 1;
+  string user_id = 2;
+}
+
+message GetTokenRequest {
+  string username = 1;
+  string password = 2;
+}
+
+message GetTokenResponse { string token = 1; }
+
+message GetUserInfoRequest { string user_id = 1; }
+
+message GetUserInfoResponse {
+  string user_id = 1;
+  string full_name = 2;
+  string username = 3;
+  string gender = 4;
+  string birth_date = 5;
+  string role = 6;
+}

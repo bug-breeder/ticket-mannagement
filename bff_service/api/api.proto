@@ -1,0 +1,72 @@
+syntax = "proto3";
+package tekone.app.warehouse.bff_service.api;
+option go_package = "go.tekoapis.com/tekone/app/warehouse/bff_service/api";
+import "validate/validate.proto";
+import "google/api/annotations.proto";
+import "tekone/app/warehouse/bff_service/api/data.proto";
+//-------------------------end generated header---------------------------//
+
+// BffService
+service BffService {
+  rpc CreateUser(CreateUserRequest) returns (CreateUserResponse) {
+    option (google.api.http) = {
+      post : "/api/v1/create-user"
+    };
+  }
+  rpc GetToken(GetTokenRequest) returns (GetTokenResponse) {
+    option (google.api.http) = {
+      post : "/api/v1/get-token"
+    };
+  }
+  rpc CreateTicket(CreateTicketRequest) returns (CreateTicketResponse) {
+    option (google.api.http) = {
+      post : "/api/v1/create-ticket"
+    };
+  }
+  rpc UpdateTicketStatus(UpdateTicketStatusRequest)
+      returns (UpdateTicketStatusResponse) {
+    option (google.api.http) = {
+      post : "/api/v1/update-ticket-status"
+    };
+  }
+}
+
+message CreateUserRequest {
+  string full_name = 1;
+  string username = 2;
+  string gender = 3;
+  string birth_date = 4;
+  string password = 5;
+  string role = 6;
+}
+
+message CreateUserResponse {
+  string message = 1;
+  string user_id = 2;
+}
+
+message GetTokenRequest {
+  string username = 1;
+  string password = 2;
+}
+
+message GetTokenResponse { string token = 1; }
+
+message CreateTicketRequest {
+  string user_id = 1;
+  string title = 2;
+  string content = 3;
+  string priority = 4;
+}
+
+message CreateTicketResponse {
+  string message = 1;
+  string ticket_id = 2;
+}
+
+message UpdateTicketStatusRequest {
+  string ticket_id = 1;
+  string status = 2;
+}
+
+message UpdateTicketStatusResponse { string message = 1; }
