@@ -1,0 +1,2 @@
+# ingore all .bazel files
+*.bazel
