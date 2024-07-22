@@ -3,17 +3,8 @@ GO_CMD_MAIN = cmd/*.go
 update:
 	cd ../../.. && make update
 
-lint:
-	cd ../../.. && golangci-lint run app/warehouse/warehouse_service/...
-
 run:
 	go run $(GO_CMD_MAIN) server
-
-run-kafka:
-	go run $(GO_CMD_MAIN) subscribe kafka
-
-run-report:
-	go run $(GO_CMD_MAIN) subscribe report-kafka
 
 sqlc:
 	sqlc generate
